@@ -1,18 +1,17 @@
 <?php namespace App\Models;
 use CodeIgniter\Model;
-class CalculationModel extends Model
+class HasilModel extends Model
 {
-   protected $table = 'calculation';
+   protected $table = 'hasil';
    protected $primaryKey = 'id';
    protected $allowedFields = [
        'id' ,
-       'x',
-       'y',
        'a',
        'b',
        'result'
+    
    ];
-   public function delete_calculation($id)
+   public function delete_hasil($id)
    {
        $data = $this->where([
            'id' => $id
@@ -28,14 +27,14 @@ class CalculationModel extends Model
        return $data;
    }
  
-   public function calculation($id)
+   public function hasil($id)
    {
        $data = $this->where([
            'id' => $id
        ])->first();
        return $data;
    }
-   public function calculation_list()
+   public function hasil_list()
    {
        $query = $this->db->table('calculation')
        ->select('*')
@@ -43,11 +42,12 @@ class CalculationModel extends Model
        return $query->getResultArray();
    }
  
-   public function calculation_create($data)
+   public function hasil_create($data)
    {
        return $this->db->table('calculation')->insert($data);
    }
  
 }
  
-
+ 
+ 

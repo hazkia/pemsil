@@ -5,7 +5,7 @@
    <meta charset="utf-8">
    <meta content="width=device-width, initial-scale=1.0" name="viewport">
  
-   <title>Regresi Calculation</title>
+   <title>Hasil</title>
    <meta content="" name="description">
    <meta content="" name="keywords">
  
@@ -41,7 +41,10 @@
  
  
  
-   <main>
+   <main id="main" class="main">
+ 
+ 
+   <?= $this->include('/layout/sidebar') ?>
  
  
  
@@ -68,31 +71,41 @@
  
  
                <div class="custom__card__large">
+                   <form enctype="multipart/form-data" role="form"
+                       action="<?= base_url('/create_calc'); ?>" method="post" >
  
  
-                   <div class="d-flex justify-content-between align-items-center container__create">
-                       <h3 for="BOD">X</h3>
-                       <input class="form-select form-control" name="BOD" type="input" id="BOD">
+                     
+                       <div class="d-flex justify-content-between align-items-center container__create">
+                           <h3 for="a">A</h3>
+                           <input class="form-control " name="a" type="input" id="a" readonly>
  
-                   </div>
-                   <div class="d-flex justify-content-between align-items-center container__create">
-                       <h3 for="Debit">Y</h3>
-                       <input class="form-control " name="Debit" type="input" id="Debit">
+                       </div>
+                       <div class="d-flex justify-content-between align-items-center container__create" readonly>
+                           <h3 for="b">B</h3>
+                           <input class="form-control " name="b" type="input" id="b" readonly>
  
-                   </div>
+                       </div>
+                       <div class="d-flex justify-content-between align-items-center container__create">
+                           <h3 for="result">Y = A + BX</h3>
+                           <input class="form-control " name="result" type="input" id="result" readonly>
  
-                   <div class="custom__header__card__large">
-                       <button type="button" class="btn btn-primary">Input Data</button>
-                      
-                   </div>
+                       </div>
+ 
+                       <div class="custom__header__card__large">
+                           <button type="button" class="btn btn-primary" onclick="doMath();" >Cek Hasil</button>
+                           <button type="submit" class="btn btn-primary">Simpan Data</button>
+ 
+                       </div>
+                   </form>
  
                </div>
  
  
                <div class="custom__card__large">
                    <div class="custom__header__card__large">
+ 
                       
-                       <button type="button" class="btn btn-primary">Input Excel</button>
                    </div>
  
                    <div class="table__wrapper">
@@ -100,27 +113,15 @@
                            <thead>
                                <tr>
                                    <th scope="col">No</th>
-                                   <th scope="col">X</th>
-                                   <th scope="col">Y</th>
                                    <th scope="col">a</th>
                                    <th scope="col">b</th>
                                    <th scope="col">y = a + bx</th>
                                </tr>
                            </thead>
                            <tbody>
-                           <tbody><form  method="post">
-                               <?php foreach ($calc as $list) : ?>
-                                  
-                               <tr>
-                                   <td><?= $list['id']?></td>
-                                   <td><?= $list['x']?></td>
-                                   <td><?= $list['y']?></td>
-                                   <td><?= $list['a']?></td>
-                                   <td><?= $list['b']?></td>
-                                   <td><?= $list['result']?></td>
-                                 
-                               </tr>
-                               <?php endforeach; ?>
+                           <tbody>
+                               <form method="post">
+                              
  
                            </tbody>
  
@@ -162,6 +163,14 @@
 </body>
  
  
+<script>
+ function doMath()
+   {
+      
+   }
+ 
+</script>
+ 
  
 </html>
-
+ 
