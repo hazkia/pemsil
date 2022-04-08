@@ -8,8 +8,9 @@ class HasilModel extends Model
        'id' ,
        'a',
        'b',
-       'result'
-    
+       'result',
+       'pearson',
+       "koefisien_determinasi"
    ];
    public function delete_hasil($id)
    {
@@ -36,7 +37,7 @@ class HasilModel extends Model
    }
    public function hasil_list()
    {
-       $query = $this->db->table('calculation')
+       $query = $this->db->table('hasil')
        ->select('*')
        ->get();
        return $query->getResultArray();
@@ -44,10 +45,9 @@ class HasilModel extends Model
  
    public function hasil_create($data)
    {
-       return $this->db->table('calculation')->insert($data);
+       return $this->db->table('hasil')->insert($data);
    }
  
 }
- 
  
  

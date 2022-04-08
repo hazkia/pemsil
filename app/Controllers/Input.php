@@ -13,15 +13,12 @@ class Input extends BaseController
  
    public function __construct()
    {
-     
        $this->InputModel = new InputModel();
    }
   
  
    public function index()
    {
- 
-    
        $input = $this->InputModel->input_list();
       
        $data = [
@@ -30,18 +27,15 @@ class Input extends BaseController
        ];
  
        return view('pages/input' , $data);
- 
    }
  
       
    public function create()
    {
-       $data = [
-          
+       $data = [    
            'id' => $this->request->getPost('id'),
            'x' => $this->request->getPost('x'),
            'y' => $this->request->getPost('y'),
-        
        ];
        $this->InputModel->input_create($data);
        return redirect()->to('/');
