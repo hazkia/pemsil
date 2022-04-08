@@ -44,7 +44,7 @@
                     <div class="d-flex flex-column custom__header">
                         <h1>Hazkia Kaikiba</h1>
                         <h1>152018082</h1>
-                        <h4>Regresi Linear Sederhana</h4>
+                        <h4>Peramalan Kebutuhan Energi Listrik Menggunakan Regresi Linear Sederhana</h4>
                     </div>
                 </div>
             </div>
@@ -59,12 +59,12 @@
                         method="post" id="BODEksisting-form">
 
                         <div class="d-flex justify-content-between align-items-center container__create">
-                            <h3 for="x">X</h3>
+                            <h3 for="x">X : Periode Tahun</h3>
                             <input class="form-select form-control" name="x" type="input" id="x">
 
                         </div>
                         <div class="d-flex justify-content-between align-items-center container__create">
-                            <h3 for="y">Y</h3>
+                            <h3 for="y">Y : Pelanggan Listrik</h3>
                             <input class="form-control " name="y" type="input" id="y">
 
                         </div>
@@ -86,8 +86,8 @@
                             <thead>
                                 <tr>
                                     <th scope="col">No</th>
-                                    <th scope="col">X</th>
-                                    <th scope="col">Y</th>
+                                    <th scope="col">X : Periode Tahun</th>
+                                    <th scope="col">Y : Pelanggan Listrik</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -46,7 +46,7 @@
                     <div class="d-flex flex-column custom__header">
                         <h1>Hazkia Kaikiba</h1>
                         <h1>152018082</h1>
-                        <h4>Regresi Linear Sederhana</h4>
+                        <h4>Perhitungan Regresi Linear Sederhana</h4>
                     </div>
                 </div>
             </div>
@@ -110,7 +110,7 @@
                                     <th scope="col">b</th>
                                     <th scope="col">y = a + bx</th>
                                     <th scope="col">Pearson</th>
-                                    <th scope="col">Koevisien Determinasi</th>
+                                    <th scope="col">Koefisien Determinasi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -131,9 +131,6 @@
                     </div>
                 </div>
             </div>
-
-
-
     </main>
 
 
@@ -154,8 +151,7 @@
 
 <script>
     // membuat variable x dan y
-    const originalOutput = ( < ? php echo json_encode($input) ? > );
-
+    const originalOutput = (<?php echo json_encode($input) ?>);
 
     // variable x
     const variabelX = originalOutput.map(function (item) {
@@ -255,17 +251,26 @@
 
     function doMath() {
         const a = (totalY * totalXKuadrat) - (totalX * totalXKaliY) / (lengthData * totalXKuadrat - kuadratTotalX);
+
+
         const b = (lengthData * totalXKaliY - totalX * totalY) / (lengthData * totalX - kuadratTotalX);
+
         const result = "Y = " + a + " + " + "(" + b + "X" + ")";
+
         const pearson = (lengthData * totalXKaliY - (totalX * totalY) / lengthData) / Math.sqrt((lengthData *
             totalXKuadrat - (totalX * totalX)) * (lengthData * totalYKuadrat - (totalY * totalY)));
+
         const koefisienDeterminasiPersentase = pearson * pearson * 100 / 100 + "%";
+
         const koefisienDeterminasi = pearson * pearson * 100 / 100;
+
         const sisa = 100 - koefisienDeterminasi + "%";
+
         const simpulan = "Sebuah hubungan linear yang terjadi antara " + "X" + " dan " + "Y" + " adalah " + " " +
             result + " dengan besar kontribusi variabel X adalah sebesar" + " " + koefisienDeterminasiPersentase +
             " dari perubahan yang ada di variabel Y sisa nya sebesar " + " " + sisa + " " +
             "dijelaskan oleh variabel selain X";
+            
         const korelasiPearson = [];
 
         if (0 <= pearson < 0.2) {
