@@ -2,13 +2,13 @@
  font-size: 14px;
  margin: 0;
  padding: 0;
- color: #3d6988;
+ color: #1b521d;
  font-weight: bold;
 }
  
 .custom__header h4 {
  font-size: 34px;
- color: #3d6988;
+ color: #1b521d;
  font-weight: bold;
 }
  
@@ -28,7 +28,7 @@
  align-items: center;
  width: 341px;
  height: 36px;
- background: white;
+ background: rgb(255, 255, 255);
  border-radius: 15px;
  overflow: hidden;
 }
@@ -110,7 +110,7 @@
 }
  
 .custom__header__card__large button {
- background: #3d6988;
+ background: #4b9e4a;
  border: none;
  border-radius: 100px;
  color: white;
@@ -125,7 +125,7 @@
  
 .custom__header__card__large button:hover {
  background: #fff;
- color: #3d6988;
+ color: #4b9e4a;
  outline-style: solid;
 }
  
@@ -146,7 +146,7 @@
 .custom__table th {
  font-size: 14px;
  font-weight: bold;
- color: #3d6988;
+ color: #1b521d;
  text-align: left;
  padding: 10px;
  text-align: center;

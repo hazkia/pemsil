@@ -22,8 +22,8 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  background: #f6f9ff;
-  color: #444444;
+  background: #f0fbda;
+  color: #023614;
 }
 
 a {
@@ -194,7 +194,7 @@ h6 {
   top: 0px;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 250px;
   z-index: 996;
   transition: all 0.3s;
   padding: 20px;
@@ -281,7 +281,7 @@ h6 {
   color: #f6f9ff;
 }
 .sidebar-nav .nav-link.collapsed {
-  color: #3d6988;
+  color: #1b521d;
   background: #fff;
 }
 .sidebar-nav .nav-link.collapsed i {
@@ -289,7 +289,7 @@ h6 {
 }
 .sidebar-nav .nav-link:hover {
   color: #f6f9ff;
-  background: #3d6988;
+  background: #4b9e4a;
 }
 .sidebar-nav .nav-link:hover i {
   color: #f6f9ff;
