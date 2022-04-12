@@ -176,10 +176,12 @@
     const totalX = convertX.reduce(function (a, b) {
         return a + b;
     }, 0);
+    
 
     // perhitungan sigma x dikuadratkan (sigma x * sigma x)
 
     const kuadratTotalX = totalX * totalX;
+    
 
     // perhitungan sigma y
 
@@ -192,16 +194,19 @@
     const xKuadrat = convertX.map(function (item) {
         return item * item;
     });
+    
 
     const convertXKuadrat = xKuadrat.map(function (item) {
         return parseFloat(item);
     });
+    
 
     // perhitungan total dari x kuadrat
 
     const totalXKuadrat = convertXKuadrat.reduce(function (a, b) {
         return a + b;
     }, 0);
+    
 
     // perhitungan y kuadrat
 
@@ -229,11 +234,13 @@
     const totalXKaliY = convertXKaliY.reduce(function (a, b) {
         return a + b;
     }, 0);
+    
 
 
     // jumlah data (length data)
 
     const lengthData = convertX.length;
+    console.log(lengthData);
 
 
     // perhitungan total dari y kuadrat
@@ -250,15 +257,13 @@
 
 
     function doMath() {
-        const a = (totalY * totalXKuadrat) - (totalX * totalXKaliY) / (lengthData * totalXKuadrat - kuadratTotalX);
+        const a = ((totalY * totalXKuadrat) - (totalX * totalXKaliY)) / ((lengthData * totalXKuadrat) - kuadratTotalX);
 
+        const b = ((lengthData * totalXKaliY) - (totalX * totalY)) / ((lengthData * totalXKuadrat) - kuadratTotalX);
 
-        const b = (lengthData * totalXKaliY - totalX * totalY) / (lengthData * totalX - kuadratTotalX);
+        const result = "Y = " + a.toFixed(2) + " + " + "(" + b.toFixed(2) + "X" + ")";
 
-        const result = "Y = " + a + " + " + "(" + b + "X" + ")";
-
-        const pearson = (lengthData * totalXKaliY - (totalX * totalY) / lengthData) / Math.sqrt((lengthData *
-            totalXKuadrat - (totalX * totalX)) * (lengthData * totalYKuadrat - (totalY * totalY)));
+        const pearson = ((lengthData * totalXKaliY) - (totalX * totalY)) / Math.sqrt(((lengthData * totalXKuadrat) - kuadratTotalX) * ((lengthData * totalYKuadrat) - kuadratTotalY));
 
         const koefisienDeterminasiPersentase = pearson * pearson * 100 / 100 + "%";
 
@@ -298,8 +303,8 @@
             "Arah hubungan - atau +, sehingga dapat dikatakan jika variable x lebih besar maka y akan mengecil, dan juga sebaliknya. besar hubungan" +
             " " + pearson + " " + "adalah" + " " + korelasiPearson.join(" ");
 
-        document.getElementById('a').value = a;
-        document.getElementById('b').value = b;
+        document.getElementById('a').value=a.toFixed(2);
+        document.getElementById('b').value=b.toFixed(2);
         document.getElementById('result').value = result;
         document.getElementById('pearson').value = pearson;
         document.getElementById('koefisien_determinasi').value = koefisienDeterminasi;
