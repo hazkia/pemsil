@@ -89,6 +89,12 @@
                             <textarea class="form-control " name="simpulan-korelasi" type="input" id="simpulan-korelasi"
                                 readonly></textarea>
                         </div>
+
+                        <div class="chart__container" style={height : 450px;}>
+                        <canvas id="myChart" ></canvas>
+                        </div>
+
+
                         <div class="custom__header__card__large">
                             <button type="button" class="btn btn-primary" onclick="doMath()">Cek Hasil</button>
                             <button type="submit" class="btn btn-primary">Simpan Data</button>
@@ -148,10 +154,35 @@
 
 </body>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
 
 <script>
     // membuat variable x dan y
     const originalOutput = (<?php echo json_encode($input) ?>);
+
+    var ctx = document.getElementById("myChart").getContext('2d');
+ 
+    // Define the data
+    var data = originalOutput;
+  
+    // End Defining data
+    var options = {responsive: true, // Instruct chart js to respond nicely.
+        maintainAspectRatio: false, // Add to prevent default behaviour of full-width/height
+    };
+  
+    // End Defining data
+    var myChart = new Chart(ctx, {
+        type: 'scatter',
+        data: {
+            datasets: [{
+                    label: 'Scatter Plot', // Name the series
+                    data: data, // Specify the data values array
+            borderColor: '#2196f3', // Add custom color border           
+            backgroundColor: '#2196f3', // Add custom color background (Points and Fill)
+                }]
+        },
+        options: options
+    });
 
     // variable x
     const variabelX = originalOutput.map(function (item) {

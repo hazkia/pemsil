@@ -12,23 +12,15 @@ $segment = $uri->getSegment(2);
 
                 <span>Input Data </span>
             </a>
-        </li><!-- End Dashboard Nav -->
+        </li>
 
         <li class="nav-item">
             <a class="nav-link  <?php  if($segment == 'informasititikpantau') {echo " ";} else {echo "collapsed";}   ?>"
                 href="/hasil">
                 <span>Hasil</span>
             </a>
-        </li><!-- End Informasi Titik Pantau Nav -->
-
-        <li class="nav-item">
-            <a class="nav-link  <?php  if($segment == 'titikpantau') {echo " ";} else {echo "collapsed";}   ?>"
-                href="/grafik">
-                <span>Grafik</span>
-            </a>
-        </li><!-- End Titik Pantau Nav -->
-
-        </li><!-- End Logout Page Nav -->
+        </li>
+        </li>
 </aside>
 
 <!-- End Sidebar-->
